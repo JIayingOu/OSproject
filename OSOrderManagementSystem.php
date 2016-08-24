@@ -57,8 +57,10 @@ function systemlogon()
 
 function formSubmitOfLogon()
 {
-	form.action="logon.php";
-	form.submit();
+	var P_adminName = $("#inputAccount").val() ;
+	var P_password = $("#inputPassword").val() ;
+	alert(P_adminName);
+	$.post("logon.php" , {adminName : P_adminName , password : P_password} , function(data , status){ alert(data + "\n" + status)});
 }
 </script>
 </body>
