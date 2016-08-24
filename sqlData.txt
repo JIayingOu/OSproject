@@ -1,0 +1,8 @@
+CREATE TABLE administrator
+(
+adminId INTEGER(10) UNIQUE AUTO_INCREMENT  ,
+adminName VARCHAR(20) PRIMARY KEY ,
+password VARCHAR(20) NOT NULL UNIQUE ,
+status  BOOLEAN NOT NULL UNIQUE DEFAULT FALSE
+);
+INSERT INTO administrator (adminName , password ) VALUES ('admin' , 'admin');
