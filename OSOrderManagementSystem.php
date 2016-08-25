@@ -59,8 +59,23 @@ function formSubmitOfLogon()
 {
 	var P_adminName = $("#inputAccount").val() ;
 	var P_password = $("#inputPassword").val() ;
-	alert(P_adminName);
-	$.post("logon.php" , {adminName : P_adminName , password : P_password} , function(data , status){ alert(data + "\n" + status)});
+	$.post("logon.php" , {"adminName" : "P_adminName" , "password" : "P_password"} , function(data , status){callBackFun(data , status);} );
+}
+
+function callBackFun(CB_data , CB_status)
+{
+	var j_data = eval( "(" + CB_data + ")" );
+	switch(j_data.sql_status)
+	{
+		case 0:
+		case 2:
+		case 3:{ alert(j_data.str); break; }
+		case 1:
+		{
+			break;
+		}
+	}     	
+     		 
 }
 </script>
 </body>
