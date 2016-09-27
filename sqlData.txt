@@ -1,8 +1,15 @@
 CREATE TABLE administrator
 (
-adminId INTEGER(10) UNIQUE AUTO_INCREMENT  ,
+adminID INTEGER(10) UNIQUE AUTO_INCREMENT  ,
 adminName VARCHAR(20) PRIMARY KEY ,
 password VARCHAR(20) NOT NULL UNIQUE ,
 status  BOOLEAN NOT NULL UNIQUE DEFAULT FALSE
-);
+)ENGINE = InnoDB;
 INSERT INTO administrator (adminName , password ) VALUES ('admin' , 'admin');
+
+CREATE TABLE LoggedInUsers
+(
+sessionID VARCHAR(100) PRIMARY KEY,
+userID INTEGER(10) NOT NULL ,
+lastUpdate DATETIME NOT NULL
+)ENGINE = InnoDB;

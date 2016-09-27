@@ -22,7 +22,6 @@
 			  $conn = $this->myConn;
 			  $conn->close();
 		  }
-		  
 	  }
 	  
 	  function connect()
